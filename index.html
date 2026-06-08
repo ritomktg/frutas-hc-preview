@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Frutas Seleccionadas HC: empaque, distribución y comercialización de aguacate para clientes nacionales e internacionales.">
+  <title>Frutas Seleccionadas HC | Concepto editorial agrícola</title>
+  <style>
+    :root {
+      --ivory: #fbf8ef;
+      --cream: #f4efe2;
+      --sand: #ebe1cd;
+      --white: #fffdf8;
+      --sage-50: #eef3e8;
+      --sage-100: #dce8d2;
+      --sage-300: #a9bc91;
+      --green: #123b2a;
+      --green-2: #1f5a3e;
+      --olive: #64754c;
+      --gold: #b9904d;
+      --charcoal: #232620;
+      --muted: #697068;
+      --line: #ded8c8;
+      --line-soft: #ece6d8;
+      --max: 1180px;
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --ease: cubic-bezier(.2, .7, .2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--charcoal);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(169, 188, 145, .24), transparent 28%),
+        linear-gradient(180deg, var(--ivory), #f8f4ea 48%, var(--cream));
+      font-family: "Aptos", "Avenir Next", "Trebuchet MS", sans-serif;
+      line-height: 1.55;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid rgba(18, 59, 42, .12);
+      background: rgba(251, 248, 239, .9);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-shell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 78px;
+      gap: 30px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      min-width: max-content;
+      color: var(--green);
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border: 1px solid var(--green);
+      border-radius: 50%;
+      background: var(--white);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+
+    .brand-name strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      line-height: 1.1;
+    }
+
+    .brand-name span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 760;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .2s var(--ease);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(18,59,42,.2);
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--green);
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      margin: 5px auto;
+      background: currentColor;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      border-color: var(--green);
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      border-color: rgba(18,59,42,.22);
+      background: rgba(255,253,248,.64);
+      color: var(--green);
+    }
+
+    .section {
+      padding: 104px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      color: var(--green-2);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--green);
+      font-family: "Aptos Display", "Avenir Next", "Trebuchet MS", sans-serif;
+      font-weight: 820;
+      letter-spacing: -.04em;
+      line-height: 1.02;
+    }
+
+    h1 {
+      max-width: 880px;
+      font-size: clamp(46px, 7vw, 88px);
+    }
+
+    h2 {
+      font-size: clamp(34px, 5vw, 60px);
+    }
+
+    h3 {
+      font-size: 24px;
+      letter-spacing: -.025em;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 20px);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 620px) minmax(280px, 1fr);
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 48px;
+    }
+
+    .hero {
+      padding: 72px 0 96px;
+      background: linear-gradient(180deg, rgba(244,239,226,.45), rgba(251,248,239,0));
+    }
+
+    .hero-editorial {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 38px;
+    }
+
+    .hero-intro {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(340px, .48fr);
+      gap: 50px;
+      align-items: end;
+    }
+
+    .hero-intro .lead {
+      max-width: 530px;
+      margin-bottom: 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+      min-height: 430px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(135deg, rgba(18,59,42,.16), rgba(169,188,145,.08)),
+        repeating-linear-gradient(110deg, rgba(18,59,42,.09) 0 1px, transparent 1px 22px),
+        var(--sage-50);
+    }
+
+    .hero-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 24%, rgba(185,144,77,.22), transparent 14%),
+        radial-gradient(circle at 78% 68%, rgba(18,59,42,.16), transparent 19%);
+    }
+
+    .image-label {
+      position: absolute;
+      left: 28px;
+      bottom: 28px;
+      padding: 12px 16px;
+      border: 1px solid rgba(18,59,42,.16);
+      border-radius: 999px;
+      background: rgba(255,253,248,.82);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+    }
+
+    .trust-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+    }
+
+    .trust-item {
+      padding: 24px 26px;
+      border-right: 1px solid var(--line-soft);
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    .trust-item span {
+      display: block;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .trust-item strong {
+      display: block;
+      margin-top: 8px;
+      color: var(--green);
+      font-size: 22px;
+      line-height: 1.15;
+    }
+
+    .why {
+      background: var(--white);
+      border-block: 1px solid var(--line-soft);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--ivory);
+    }
+
+    .why-card {
+      min-height: 300px;
+      padding: 30px;
+      border-right: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,253,248,.9), rgba(244,239,226,.5));
+    }
+
+    .why-card:last-child {
+      border-right: 0;
+    }
+
+    .card-index {
+      display: block;
+      margin-bottom: 70px;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .16em;
+    }
+
+    .why-card p,
+    .service-card p,
+    .quality-note p,
+    .location-card p {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .timeline-section {
+      background:
+        linear-gradient(90deg, rgba(18,59,42,.05) 1px, transparent 1px),
+        linear-gradient(180deg, var(--cream), var(--ivory));
+      background-size: 84px 100%, auto;
+    }
+
+    .timeline-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, .36fr) minmax(0, .64fr);
+      gap: 52px;
+      align-items: start;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--line);
+      background: rgba(255,253,248,.42);
+    }
+
+    .milestone {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 28px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .milestone time {
+      color: var(--green);
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      line-height: 1;
+    }
+
+    .milestone h3 {
+      font-size: 23px;
+    }
+
+    .milestone p {
+      max-width: 520px;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .timeline-aside {
+      position: sticky;
+      top: 108px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+    }
+
+    .timeline-aside .placeholder {
+      min-height: 300px;
+      margin-top: 26px;
+    }
+
+    .capabilities {
+      background: var(--ivory);
+    }
+
+    .service-overview {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .service-top {
+      display: grid;
+      grid-template-columns: minmax(0, .58fr) minmax(320px, .42fr);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .service-summary {
+      padding: 34px;
+    }
+
+    .service-summary p {
+      max-width: 650px;
+      margin-top: 14px;
+      color: var(--muted);
+    }
+
+    .service-image {
+      min-height: 280px;
+      border-left: 1px solid var(--line);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .service-card {
+      min-height: 245px;
+      padding: 30px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .service-card:nth-child(3n) {
+      border-right: 0;
+    }
+
+    .service-card:nth-last-child(-n+3) {
+      border-bottom: 0;
+    }
+
+    .service-number {
+      display: inline-block;
+      margin-bottom: 42px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .18em;
+    }
+
+    .placeholder {
+      position: relative;
+      display: grid;
+      min-height: 100%;
+      place-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(18,59,42,.12), rgba(169,188,145,.08)),
+        repeating-linear-gradient(120deg, rgba(18,59,42,.08) 0 1px, transparent 1px 20px),
+        var(--sage-50);
+      color: var(--green);
+    }
+
+    .placeholder::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(18,59,42,.12);
+      border-radius: 22px;
+    }
+
+    .placeholder strong {
+      position: relative;
+      padding: 12px 16px;
+      border: 1px solid rgba(18,59,42,.14);
+      border-radius: 999px;
+      background: rgba(255,253,248,.78);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .quality {
+      background: linear-gradient(180deg, var(--sage-50), var(--ivory));
+    }
+
+    .quality-layout {
+      display: grid;
+      grid-template-columns: minmax(320px, .44fr) minmax(0, .56fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .quality-image {
+      min-height: 620px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+
+    .quality-copy {
+      padding: 16px 0;
+    }
+
+    .quality-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 34px;
+      list-style: none;
+    }
+
+    .quality-note {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 18px;
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .quality-note:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .check {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid var(--green);
+      border-radius: 999px;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .presence {
+      background: var(--white);
+      border-block: 1px solid var(--line-soft);
+    }
+
+    .presence-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .5fr) minmax(320px, .5fr);
+      gap: 40px;
+      align-items: stretch;
+    }
+
+    .location-panel {
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--ivory);
+    }
+
+    .location-stack {
+      display: grid;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .location-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+    }
+
+    .location-kicker {
+      display: inline-flex;
+      margin-bottom: 16px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .map-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 560px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(90deg, rgba(18,59,42,.08) 1px, transparent 1px),
+        linear-gradient(rgba(18,59,42,.08) 1px, transparent 1px),
+        var(--sage-50);
+      background-size: 58px 58px;
+    }
+
+    .map-card svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .map-label {
+      position: absolute;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .map-label.cdmx {
+      right: 18%;
+      bottom: 27%;
+    }
+
+    .map-label.mexicali {
+      left: 14%;
+      top: 18%;
+    }
+
+    .map-caption {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(255,253,248,.86);
+      backdrop-filter: blur(10px);
+    }
+
+    .map-caption strong {
+      display: block;
+      color: var(--green);
+      font-size: 20px;
+    }
+
+    .map-caption p {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact {
+      background: linear-gradient(180deg, var(--ivory), var(--cream));
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: minmax(300px, .42fr) minmax(0, .58fr);
+      gap: 38px;
+      align-items: start;
+      padding: 38px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--white);
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 14px;
+      margin-top: 34px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .form {
+      display: grid;
+      gap: 16px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--ivory);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--white);
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
+    }
+
+    input {
+      height: 52px;
+      padding: 0 15px;
+    }
+
+    textarea {
+      min-height: 134px;
+      resize: vertical;
+      padding: 14px 15px;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--green-2);
+      box-shadow: 0 0 0 4px rgba(31, 90, 62, .1);
+    }
+
+    .form .btn {
+      width: 100%;
+      min-height: 56px;
+      margin-top: 4px;
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--line);
+      background: var(--cream);
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      color: var(--green);
+      font-weight: 760;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .65s var(--ease), transform .65s var(--ease);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 1040px) {
+      .hero-intro,
+      .section-head,
+      .timeline-layout,
+      .service-top,
+      .quality-layout,
+      .presence-layout,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-aside {
+        position: static;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-card:nth-child(2) {
+        border-right: 0;
+      }
+
+      .why-card:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .service-image {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .service-card:nth-child(3n) {
+        border-right: 1px solid var(--line);
+      }
+
+      .service-card:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .service-card:nth-last-child(-n+3) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .service-card:nth-last-child(-n+2) {
+        border-bottom: 0;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .nav-shell {
+        min-height: 72px;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 72px;
+        left: 20px;
+        right: 20px;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: rgba(255,253,248,.98);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .header-actions .btn {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      .hero {
+        padding: 56px 0 74px;
+      }
+
+      .hero-image {
+        min-height: 340px;
+      }
+
+      .trust-bar,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--line-soft);
+      }
+
+      .trust-item:last-child {
+        border-bottom: 0;
+      }
+
+      .milestone {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card,
+      .service-card:nth-child(2n),
+      .service-card:nth-child(3n),
+      .service-card:nth-last-child(-n+2),
+      .service-card:nth-last-child(-n+3) {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .service-card:last-child {
+        border-bottom: 0;
+      }
+
+      .quality-image,
+      .map-card {
+        min-height: 430px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .wrap {
+        width: min(100% - 28px, var(--max));
+      }
+
+      h1 {
+        font-size: clamp(42px, 13vw, 58px);
+      }
+
+      .brand-name strong {
+        font-size: 11px;
+      }
+
+      .brand-name span {
+        display: none;
+      }
+
+      .hero-actions .btn,
+      .btn {
+        width: 100%;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-card,
+      .why-card:nth-child(2),
+      .why-card:nth-child(-n+2) {
+        min-height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .why-card:last-child {
+        border-bottom: 0;
+      }
+
+      .card-index {
+        margin-bottom: 34px;
+      }
+
+      .contact-card,
+      .form,
+      .location-panel,
+      .service-summary {
+        padding: 22px;
+      }
+
+      .quality-note {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav-shell">
+      <a class="brand" href="#inicio" aria-label="Frutas Seleccionadas HC">
+        <span class="brand-mark">HC</span>
+        <span class="brand-name">
+          <strong>FRUTAS SELECCIONADAS HC</strong>
+          <span>Empaque · Distribución · Aguacate</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#capacidades">Capacidades</a>
+        <a href="#calidad">Calidad</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-primary" href="#contacto">Contacto Comercial</a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="navLinks" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="wrap hero-editorial">
+        <div class="hero-intro">
+          <div class="reveal">
+            <p class="eyebrow">Frutas Seleccionadas HC</p>
+            <h1>Empaque y distribución de aguacate con experiencia, calidad y compromiso.</h1>
+          </div>
+
+          <div class="reveal">
+            <p class="lead">Trabajamos directamente con productores para ofrecer soluciones confiables de empaque, distribución y comercialización de aguacate para clientes nacionales e internacionales.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contacto">Contacto Comercial</a>
+              <a class="btn btn-secondary" href="#nosotros">Nuestra Historia</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image reveal" aria-label="Imagen principal de huerto">
+          <span class="image-label">Imagen de huerto</span>
+        </div>
+
+        <div class="trust-bar reveal" aria-label="Indicadores de confianza">
+          <div class="trust-item">
+            <span>Empresa</span>
+            <strong>Familiar</strong>
+          </div>
+          <div class="trust-item">
+            <span>Operando</span>
+            <strong>Desde 2017</strong>
+          </div>
+          <div class="trust-item">
+            <span>Relación directa</span>
+            <strong>Productores desde el origen</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section why" id="nosotros">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="reveal">
+            <p class="eyebrow">Por Qué HC</p>
+            <h2>Una empresa cercana al origen, preparada para crecer.</h2>
+          </div>
+          <p class="lead reveal">HC combina relación directa con productores, experiencia comercial y una operación en crecimiento para atender a compradores que requieren cumplimiento, consistencia y comunicación clara.</p>
+        </div>
+
+        <div class="why-grid">
+          <article class="why-card reveal">
+            <span class="card-index">01</span>
+            <h3>Productores desde el origen</h3>
+            <p>Vinculación directa con productores para cuidar disponibilidad, trazabilidad operativa y continuidad comercial.</p>
+          </article>
+          <article class="why-card reveal">
+            <span class="card-index">02</span>
+            <h3>Experiencia comprobada</h3>
+            <p>Desde 2017 hemos desarrollado una operación enfocada en empaque, distribución y comercialización responsable.</p>
+          </article>
+          <article class="why-card reveal">
+            <span class="card-index">03</span>
+            <h3>Presencia nacional</h3>
+            <p>Atención comercial y capacidad de distribución para conectar producto con distintos mercados en México.</p>
+          </article>
+          <article class="why-card reveal">
+            <span class="card-index">04</span>
+            <h3>Visión internacional</h3>
+            <p>Una estructura preparada para evolucionar hacia oportunidades de exportación y alianzas de mayor escala.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section timeline-section" aria-labelledby="trayectoria-title">
+      <div class="wrap timeline-layout">
+        <aside class="timeline-aside reveal">
+          <p class="eyebrow">Nuestra Trayectoria</p>
+          <h2 id="trayectoria-title">Crecimiento ordenado, con enfoque comercial.</h2>
+          <p class="lead">Una empresa familiar que ha fortalecido su operación paso a paso: de la base productiva a la comercialización nacional y una visión exportadora.</p>
+          <div class="placeholder"><strong>Imagen de empaque</strong></div>
+        </aside>
+
+        <div class="timeline">
+          <article class="milestone reveal">
+            <time>2017</time>
+            <div>
+              <h3>Inicio de operaciones</h3>
+              <p>Arranque de la actividad empresarial con base familiar y relación cercana con productores.</p>
+            </div>
+          </article>
+          <article class="milestone reveal">
+            <time>2021</time>
+            <div>
+              <h3>Comercialización nacional</h3>
+              <p>Consolidación de canales comerciales y atención a clientes en el mercado mexicano.</p>
+            </div>
+          </article>
+          <article class="milestone reveal">
+            <time>2024</time>
+            <div>
+              <h3>Empaque y distribución</h3>
+              <p>Fortalecimiento de capacidades operativas para ordenar producto, flujo y entrega.</p>
+            </div>
+          </article>
+          <article class="milestone reveal">
+            <time>2024</time>
+            <div>
+              <h3>Sucursales en CDMX y Mexicali</h3>
+              <p>Apertura de presencia comercial para ampliar cobertura nacional y atención a nuevos clientes.</p>
+            </div>
+          </article>
+          <article class="milestone reveal">
+            <time>2025+</time>
+            <div>
+              <h3>Expansión internacional</h3>
+              <p>Preparación comercial y operativa para atender oportunidades fuera de México.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section capabilities" id="capacidades">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="reveal">
+            <p class="eyebrow">Capacidades Operativas</p>
+            <h2>Servicios estructurados para relaciones B2B de largo plazo.</h2>
+          </div>
+          <p class="lead reveal">El enfoque operativo de HC está diseñado para reducir fricción comercial: producto seleccionado, coordinación con origen, distribución y respuesta directa.</p>
+        </div>
+
+        <div class="service-overview reveal">
+          <div class="service-top">
+            <div class="service-summary">
+              <h3>Una operación conectada: origen, empaque, distribución y atención comercial.</h3>
+              <p>La propuesta de HC integra capacidades esenciales para compradores, distribuidores, aliados de empaque y futuros clientes de exportación.</p>
+            </div>
+            <div class="service-image placeholder"><strong>Imagen de distribución</strong></div>
+          </div>
+
+          <div class="service-grid">
+            <article class="service-card">
+              <span class="service-number">01</span>
+              <h3>Empaque</h3>
+              <p>Procesos de selección, acondicionamiento y presentación orientados a consistencia comercial.</p>
+            </article>
+            <article class="service-card">
+              <span class="service-number">02</span>
+              <h3>Distribución</h3>
+              <p>Coordinación logística para atender clientes y mercados con oportunidad y comunicación constante.</p>
+            </article>
+            <article class="service-card">
+              <span class="service-number">03</span>
+              <h3>Relación directa con productores</h3>
+              <p>Trabajo desde el origen para sostener disponibilidad, confianza y entendimiento del producto.</p>
+            </article>
+            <article class="service-card">
+              <span class="service-number">04</span>
+              <h3>Cobertura nacional</h3>
+              <p>Presencia y capacidad de atención para diferentes zonas comerciales dentro de México.</p>
+            </article>
+            <article class="service-card">
+              <span class="service-number">05</span>
+              <h3>Atención comercial</h3>
+              <p>Seguimiento profesional para compradores, distribuidores, aliados de empaque y futuros clientes de exportación.</p>
+            </article>
+            <article class="service-card">
+              <span class="service-number">06</span>
+              <h3>Visión de crecimiento</h3>
+              <p>Operación en evolución, preparada para escalar relaciones comerciales y nuevos mercados.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section quality" id="calidad">
+      <div class="wrap quality-layout">
+        <div class="quality-image placeholder reveal"><strong>Imagen de equipo / operación</strong></div>
+
+        <div class="quality-copy reveal">
+          <p class="eyebrow">Calidad</p>
+          <h2>Cuidado sereno y consistente en cada etapa del aguacate.</h2>
+          <p class="lead">Para HC, la calidad se construye antes de la entrega: empieza en el origen, continúa en el manejo y se sostiene con procesos claros y relaciones comerciales serias.</p>
+
+          <ul class="quality-list">
+            <li class="quality-note">
+              <span class="check">✓</span>
+              <div>
+                <h3>Selección cuidadosa</h3>
+                <p>Clasificación y revisión del producto para ofrecer consistencia a clientes comerciales.</p>
+              </div>
+            </li>
+            <li class="quality-note">
+              <span class="check">✓</span>
+              <div>
+                <h3>Frescura</h3>
+                <p>Manejo enfocado en conservar la condición del aguacate durante el flujo operativo.</p>
+              </div>
+            </li>
+            <li class="quality-note">
+              <span class="check">✓</span>
+              <div>
+                <h3>Experiencia operativa</h3>
+                <p>Conocimiento práctico de empaque, distribución y comercialización nacional.</p>
+              </div>
+            </li>
+            <li class="quality-note">
+              <span class="check">✓</span>
+              <div>
+                <h3>Relaciones directas con productores</h3>
+                <p>Comunicación cercana con el origen para fortalecer disponibilidad y confianza.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section presence">
+      <div class="wrap presence-layout">
+        <div class="location-panel reveal">
+          <p class="eyebrow">Presencia Comercial</p>
+          <h2>Dos puntos clave para atender mercado nacional y frontera.</h2>
+          <p class="lead">CDMX y Mexicali fortalecen la atención comercial de HC, conectando demanda, distribución y oportunidades de expansión.</p>
+
+          <div class="location-stack">
+            <article class="location-card">
+              <span class="location-kicker">CDMX</span>
+              <h3>Ciudad de México</h3>
+              <p>Centro de atención comercial y conexión con compradores, distribuidores y canales nacionales.</p>
+            </article>
+            <article class="location-card">
+              <span class="location-kicker">Mexicali</span>
+              <h3>Mexicali, Baja California</h3>
+              <p>Nodo estratégico hacia el noroeste, frontera y futuras oportunidades internacionales.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="map-card reveal" aria-label="Mapa conceptual de presencia comercial">
+          <svg viewBox="0 0 900 620" aria-hidden="true">
+            <path d="M200 145 C 345 205, 470 320, 652 430" fill="none" stroke="rgba(185,144,77,.86)" stroke-width="4" stroke-dasharray="10 12" stroke-linecap="round"></path>
+            <circle cx="200" cy="145" r="12" fill="#123b2a"></circle>
+            <circle cx="652" cy="430" r="12" fill="#123b2a"></circle>
+          </svg>
+          <span class="map-label mexicali">Mexicali</span>
+          <span class="map-label cdmx">CDMX</span>
+          <div class="map-caption">
+            <strong>Mapa conceptual de cobertura</strong>
+            <p>Representación visual para presentar presencia y potencial de rutas comerciales.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contacto">
+      <div class="wrap contact-card">
+        <div class="reveal">
+          <p class="eyebrow">Contacto Comercial</p>
+          <h2>Construyamos una conversación comercial clara.</h2>
+          <p class="lead">Comparte tus necesidades de compra, empaque, distribución o alianza. El equipo comercial de Frutas Seleccionadas HC puede preparar información para una conversación seria.</p>
+          <div class="contact-details">
+            <span>Ciudad de México · Mexicali, Baja California</span>
+            <span>comercial@frutasseleccionadashc.com</span>
+            <span>+52 000 000 0000</span>
+          </div>
+        </div>
+
+        <form class="form reveal" id="contactForm">
+          <div class="form-row">
+            <div class="field">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+            </div>
+            <div class="field">
+              <label for="empresa">Empresa</label>
+              <input id="empresa" name="empresa" type="text" placeholder="Nombre de la empresa">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="correo">Correo</label>
+              <input id="correo" name="correo" type="email" placeholder="correo@empresa.com" required>
+            </div>
+            <div class="field">
+              <label for="telefono">Teléfono</label>
+              <input id="telefono" name="telefono" type="tel" placeholder="+52 ...">
+            </div>
+          </div>
+          <div class="field">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu operación, volúmenes y mercado objetivo."></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Solicitar información</button>
+          <p class="form-note" id="formNote">Mockup visual: el formulario no envía información todavía.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year"></span> Frutas Seleccionadas HC. Todos los derechos reservados.</p>
+      <div class="footer-links">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#capacidades">Capacidades</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector("#navLinks");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+
+    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+    document.querySelector("#year").textContent = new Date().getFullYear();
+
+    document.querySelector("#contactForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      document.querySelector("#formNote").textContent = "Solicitud registrada para demostración. En producción se conectaría a CRM, correo o WhatsApp.";
+    });
+  </script>
+</body>
+</html>
